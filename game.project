@@ -1,5 +1,5 @@
 [project]
-title = MyDesktopProject
+title = SailingSimulator
 
 [bootstrap]
 main_collection = /main/main.collectionc
@@ -27,3 +27,4 @@ input_method = HiddenInputField
 [physics]
 gravity_y = -1000.0
 scale = 0.01
+
