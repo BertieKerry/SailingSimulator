@@ -1,0 +1,17 @@
+local variable = require("main/modules/variable")
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	go.cancel_animations("/boom#boom")
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("right") and variable.sAngle ~= 90 then
+		variable.modifysAngle(variable.sAngle+0.5)
+		go.set_rotation(vmath.quat_rotation_z(math.rad(variable.sAngle)))
+		
+	elseif action_id == hash("left") and variable.sAngle ~= -90 then 
+		variable.modifysAngle(variable.sAngle-0.5)
+		go.set_rotation(vmath.quat_rotation_z(math.rad(variable.sAngle)))
+	end
+end

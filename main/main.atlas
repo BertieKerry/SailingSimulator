@@ -1,12 +1,5 @@
-images {
-  image: "/assets/images/background.png"
-}
-images {
-  image: "/assets/images/logo.png"
-}
-images {
-  image: "/builtins/graphics/particle_blob.png"
-}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
+max_page_width: 0
+max_page_height: 0

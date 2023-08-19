@@ -1,5 +1,6 @@
 [project]
 title = SailingSimulator
+dependencies#0 = https://github.com/klaytonkowalski/defold-tilemap-animator/archive/master.zip
 
 [bootstrap]
 main_collection = /main/main.collectionc
@@ -16,7 +17,7 @@ height = 720
 shared_state = 1
 
 [windows]
-app_icon = /assets/app_icons/appicon.ico
+app_icon = /assets/app_icons/boat.ico
 
 [osx]
 app_icon = /assets/app_icons/appicon.icns

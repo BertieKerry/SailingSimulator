@@ -1,0 +1,12 @@
+local dtile = require "dtile.dtile"
+
+local h_str = {
+	acquire_input_focus = hash("acquire_input_focus"),
+	click = hash("click"),
+	click_debug = hash("click_debug"),
+	layer1 = hash("layer1")
+}
+
+function init(self)
+	dtile.init(require "main.sea.animation_groups", msg.url("#tilemap"), { h_str.layer1 })
+end

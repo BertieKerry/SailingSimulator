@@ -1,0 +1,13 @@
+local variable = require("main/modules/variable")
+
+function init(self) msg.post(".", "acquire_input_focus") end
+
+function on_input(self, action_id, action)
+    if action_id == hash("d") then -- Q F
+        variable.modifybAngle(variable.bAngle - 0.4)
+        go.set_rotation(vmath.quat_rotation_z(math.rad(variable.bAngle)))
+    elseif action_id == hash("a") then
+        variable.modifybAngle(variable.bAngle + 0.4)
+        go.set_rotation(vmath.quat_rotation_z(math.rad(variable.bAngle)))
+    end
+end

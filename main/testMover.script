@@ -1,0 +1,39 @@
+local variable = require("main/modules/variable")
+local funct = require("main/modules/funct")
+
+function init(self)
+    msg.post(".", "acquire_input_focus")
+    self.input = vmath.vector3()
+    self.velo = vmath.vector3()
+end
+
+function update(self, dt)
+    self.input = funct.angleToVector(variable.bAngle)
+
+    if vmath.length_sqr(self.input) > 1 then
+        self.input = vmath.normalize(self.input)
+    end
+
+    local acceleration = (self.input * 200) * variable.effic
+
+    local dv = acceleration * dt
+
+    --
+    local dragCoefficient = 0.5 -- Adjust this value as needed
+    local dragForce = self.velo * -dragCoefficient
+    local dragChange = dragForce * dt
+    dv = dv + dragChange  -- Add drag change to the acceleration change
+    --
+    
+    local v0 = self.velo
+    local v1 = self.velo + dv
+    local movement = (v0 + v1) * dt * 0.5
+    movement.y = movement.y - 0.1
+    local p = go.get_position()
+    go.set_position(p + movement)
+    self.velo = v1
+    
+    self.input = vmath.vector3()
+
+    msg.post("camera", "follow")
+end
