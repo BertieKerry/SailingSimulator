@@ -8,7 +8,13 @@ end
 
 function update(self, dt)
     local sail = math.floor(math.abs(variable.sAngle))
+    
     local boat = math.floor(math.abs(variable.bAngle))
+    
+    if boat>360 then
+        boat=boat-360
+    end
+    print(boat)
     local velo = sailData.data[boat + 1][2]
     local prefSail = sailData.data[boat + 1][3]
     local effic = velo - (0.01 * (math.abs(prefSail - sail)))
@@ -16,13 +22,18 @@ function update(self, dt)
     if effic < 0 then
         effic = 0
     end
+
+
     
     if variable.sAngle>0 and variable.bAngle<0 then
         variable.modifyeffic(effic)                                 --ok future, now can you add this to limit the sail. or perhaps make it flap when efficiency ==0.
+        msg.post("/boom", "fill")
     elseif variable.sAngle>0 and variable.bAngle<0 then
         variable.modifyeffic(effic)
+        msg.post("/boom", "fill")
     else
         variable.modifyeffic(0)
+        msg.post("/boom", "flap")
     end
     
 end

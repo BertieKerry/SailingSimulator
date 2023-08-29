@@ -16,12 +16,8 @@ animations {
     image: "/assets/images/booms/boom4.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
-  images {
-    image: "/assets/images/booms/boom5.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  playback: PLAYBACK_ONCE_PINGPONG
-  fps: 60
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 10
   flip_horizontal: 0
   flip_vertical: 0
 }

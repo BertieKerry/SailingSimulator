@@ -1,4 +1,4 @@
-local M = {}  -- Create a Lua module table
+local M = {}
 
 M.sAngle = 0
 M.bAngle = -1
@@ -16,4 +16,4 @@ function M.modifyeffic(value)
 	M.effic = value
 end
 
-return M  -- Return the module table
+return M

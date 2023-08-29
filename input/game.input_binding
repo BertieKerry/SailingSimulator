@@ -1,6 +1,6 @@
 key_trigger {
   input: KEY_SPACE
-  action: ""
+  action: "space"
 }
 key_trigger {
   input: KEY_LEFT

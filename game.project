@@ -29,3 +29,6 @@ input_method = HiddenInputField
 gravity_y = -1000.0
 scale = 0.01
 
+[tilemap]
+max_tile_count = 8192
+
