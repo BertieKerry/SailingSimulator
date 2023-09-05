@@ -19,10 +19,10 @@ function update(self, dt)
     local dv = acceleration * dt
 
     --
-    local dragCoefficient = 0.5 -- Adjust this value as needed
+    local dragCoefficient = 0.5
     local dragForce = self.velo * -dragCoefficient
     local dragChange = dragForce * dt
-    dv = dv + dragChange  -- Add drag change to the acceleration change
+    dv = dv + dragChange
     --
     
     local v0 = self.velo
@@ -33,7 +33,7 @@ function update(self, dt)
     go.set_position(p + movement)
     self.velo = v1
     
-    self.input = vmath.vector3()
+    --self.input = vmath.vector3()
 
     msg.post("camera", "follow")
 end

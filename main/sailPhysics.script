@@ -1,5 +1,6 @@
 local sailData = require("main/modules/sailData")
 local variable = require("main/modules/variable")
+
 function init(self)
     sail = math.abs(variable.sAngle)
     msg.post(".", "acquire_input_focus")
@@ -17,23 +18,20 @@ function update(self, dt)
     print(boat)
     local velo = sailData.data[boat + 1][2]
     local prefSail = sailData.data[boat + 1][3]
+    print("pref sail", prefSail)
     local effic = velo - (0.01 * (math.abs(prefSail - sail)))
     
     if effic < 0 then
         effic = 0
     end
 
-
+    print(variable.effic, variable.bAngle, variable.sAngle)
     
-    if variable.sAngle>0 and variable.bAngle<0 then
-        variable.modifyeffic(effic)                                 --ok future, now can you add this to limit the sail. or perhaps make it flap when efficiency ==0.
-        msg.post("/boom", "fill")
-    elseif variable.sAngle>0 and variable.bAngle<0 then
-        variable.modifyeffic(effic)
-        msg.post("/boom", "fill")
-    else
-        variable.modifyeffic(0)
+    if variable.effic==0 then
         msg.post("/boom", "flap")
+    else
+        msg.post("/boom", "fill")
     end
     
+    variable.modifyeffic(effic)
 end

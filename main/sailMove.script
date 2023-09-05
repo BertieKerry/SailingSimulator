@@ -5,13 +5,21 @@ function init(self)
 end
 
 function on_input(self, action_id, action)
-	if action_id == hash("right") and variable.sAngle ~= 90 then
+	if action_id == hash("left") and variable.sAngle<90 then  -- is it actually ver going negative, not sure it really is
 		variable.modifysAngle(variable.sAngle+0.5)
-		go.set_rotation(vmath.quat_rotation_z(math.rad(variable.sAngle)))
-		
-	elseif action_id == hash("left") and variable.sAngle ~= -90 then 
+		if variable.switch==true then
+			go.set_rotation(vmath.quat_rotation_z(math.rad(variable.sAngle+180)))
+		else
+			go.set_rotation(vmath.quat_rotation_z(math.rad(variable.sAngle)))
+		end
+	elseif action_id == hash("right") and variable.sAngle>0.5 then 
 		variable.modifysAngle(variable.sAngle-0.5)
-		go.set_rotation(vmath.quat_rotation_z(math.rad(variable.sAngle)))
+		if variable.switch==true then
+			go.set_rotation(vmath.quat_rotation_z(math.rad(variable.sAngle+180)))
+		else
+			go.set_rotation(vmath.quat_rotation_z(math.rad(variable.sAngle)))
+		end
 	end
+
 	
 end

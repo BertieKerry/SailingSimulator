@@ -1,0 +1,22 @@
+local variable = require("main/modules/variable")
+
+function init(self)
+	self.status = false
+end
+
+function update(self, dt)
+	if variable.bAngle>0 and self.status == false then
+
+		go.set_rotation(go.get_rotation()* vmath.quat_rotation_z(math.rad(180)))
+		variable.switch = true
+		go.set("/flipboom", "scale", vmath.vector3(1, -1, 1))
+		
+		self.status=true
+	elseif variable.bAngle<0 and self.status == true then
+		go.set_rotation(go.get_rotation()* vmath.quat_rotation_z(math.rad(180)))
+		variable.switch = false
+		go.set("/flipboom", "scale", vmath.vector3(1, 1, 1))
+
+		self.status=false
+	end
+end
