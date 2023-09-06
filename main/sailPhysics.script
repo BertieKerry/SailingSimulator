@@ -1,37 +1,31 @@
-local sailData = require("main/modules/sailData")
-local variable = require("main/modules/variable")
-
-function init(self)
-    sail = math.abs(variable.sAngle)
-    msg.post(".", "acquire_input_focus")
-
-end
+local sailData = require("main/modules/sailData") -- import variables
+local variable = require("main/modules/variable") -- import sail look-up table
 
 function update(self, dt)
-    local sail = math.floor(math.abs(variable.sAngle))
+    local sail = math.floor(math.abs(variable.sAngle)) -- normalise sail angle
+    local boat = math.floor(math.abs(variable.bAngle)) -- normalise boat angle
     
-    local boat = math.floor(math.abs(variable.bAngle))
+    local velo = sailData.data[boat + 1][2] -- get maximum possible velocity of boat angle
+    local prefSail = sailData.data[boat + 1][3] -- get optimum sail angle for boat angle
     
-    if boat>360 then
-        boat=boat-360
-    end
-    print(boat)
-    local velo = sailData.data[boat + 1][2]
-    local prefSail = sailData.data[boat + 1][3]
-    print("pref sail", prefSail)
-    local effic = velo - (0.01 * (math.abs(prefSail - sail)))
+    
+    local effic = velo - (0.01 * (math.abs(prefSail - sail))) -- efficiency = velocity - sail difference
     
     if effic < 0 then
-        effic = 0
+        effic = 0 -- ensure number is not negative
     end
 
-    print(variable.effic, variable.bAngle, variable.sAngle)
+    variable.modifyeffic(effic) -- save efficiency in variables.lua file
     
     if variable.effic==0 then
-        msg.post("/boom", "flap")
+        msg.post("/boom", "flap") -- flap sail when not used
     else
-        msg.post("/boom", "fill")
+        msg.post("/boom", "fill") -- fill sail when in use
     end
-    
-    variable.modifyeffic(effic)
 end
+
+
+
+
+
+--

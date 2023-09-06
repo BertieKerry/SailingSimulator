@@ -1,14 +1,15 @@
 function init(self)
-	msg.post(".", "acquire_input_focus")
-	self.status = false
+	self.status = false -- anti-repeat
 end
 
 function on_message(self, message_id, message)
-	if message_id == hash("flap") and self.status == false then
-		sprite.play_flipbook("/boom#boom","flap")
-		self.status = true
+	if message_id == hash("flap") and self.status == false then -- if flap message received
+		sprite.play_flipbook("/boom#boom", "flap") -- set sail to flap animation
+		self.status = true -- toggle anti-repeat
 	elseif message_id == hash("fill") and self.status == true then
-		sprite.play_flipbook("/boom#boom","boom")
+		sprite.play_flipbook("/boom#boom", "boom") -- set sail to fill animation
 		self.status = false
 	end
 end
+
+--

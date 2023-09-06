@@ -18,10 +18,11 @@ function M.modifyeffic(value)
 	M.effic = value
 end
 
+
 function M.modifyswitch(value)
 	M.switch = value
 end
 
-
-
 return M
+
+--

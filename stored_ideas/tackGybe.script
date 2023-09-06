@@ -1,0 +1,47 @@
+local variable = require("main/modules/variable")
+
+function init(self)
+	msg.post(".", "acquire_input_focus") --del later
+	--sprite.play_flipbook("/phantomBoom#ghost","blank")
+end
+
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("tack") then
+		if variable.switch == true then
+			local degrees_to_spin = math.abs(2*variable.sAngle)
+			go.set_rotation(vmath.quat_rotation_z(math.rad(-variable.sAngle)))   --oppposite tack
+			sprite.play_flipbook("/phantomBoom#ghost","flap")
+			print("workeing")
+			go.animate(".", "euler.z", go.PLAYBACK_ONCE_BACKWARD, go.get(".", "euler.z") + degrees_to_spin, go.EASING_LINEAR, 2)
+			sprite.play_flipbook("/phantomBoom#ghost","blank")
+		else  --efficiencyise this 
+			local degrees_to_spin = math.abs(2*variable.sAngle)
+			go.set_rotation(vmath.quat_rotation_z(math.rad(variable.sAngle)))   --normal tack
+			sprite.play_flipbook("/phantomBoom#ghost","flap")
+			go.animate(".", "euler.z", go.PLAYBACK_ONCE_FORWARD, go.get(".", "euler.z") + degrees_to_spin, go.EASING_LINEAR, 2)
+			sprite.play_flipbook("/phantomBoom#ghost","blank")
+		end
+	end
+end 
+
+function update(self, dt)
+
+end
+
+function fixed_update(self, dt)
+	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
+	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
+	-- Physics section of game.project
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+

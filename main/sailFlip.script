@@ -1,22 +1,26 @@
-local variable = require("main/modules/variable")
+local variable = require("main/modules/variable") -- import variables
 
 function init(self)
-	self.status = false
+	self.status = false -- anti-repeat
 end
 
 function update(self, dt)
-	if variable.bAngle>0 and self.status == false then
+	print(variable.sAngle)
+	if variable.bAngle > 0 and self.status == false then -- checks if sail is on different side
+		go.set_rotation(go.get_rotation() * vmath.quat_rotation_z(math.rad(180))) -- rotates 180 degrees
+		go.set("/flipboom", "scale", vmath.vector3(1, -1, 1)) -- flips so that controls arent inverted
 
-		go.set_rotation(go.get_rotation()* vmath.quat_rotation_z(math.rad(180)))
-		variable.switch = true
-		go.set("/flipboom", "scale", vmath.vector3(1, -1, 1))
-		
-		self.status=true
-	elseif variable.bAngle<0 and self.status == true then
-		go.set_rotation(go.get_rotation()* vmath.quat_rotation_z(math.rad(180)))
-		variable.switch = false
+		variable.modifyswitch(true) -- post flip msg
+
+		self.status = true -- toggle anti-repeat
+	elseif variable.bAngle < 0 and self.status == true then
+		go.set_rotation(go.get_rotation() * vmath.quat_rotation_z(math.rad(180)))
 		go.set("/flipboom", "scale", vmath.vector3(1, 1, 1))
 
-		self.status=false
+		variable.modifyswitch(false)
+
+		self.status = false
 	end
 end
+
+--

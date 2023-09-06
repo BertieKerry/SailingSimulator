@@ -1,3 +1,3 @@
-# This is worth ignoring for the time being.
+# Current Objectives #
 
----
+- Neaten and robust-ify the code to not be so break-y

@@ -3,20 +3,20 @@ key_trigger {
   action: "space"
 }
 key_trigger {
-  input: KEY_LEFT
-  action: "left"
-}
-key_trigger {
-  input: KEY_RIGHT
-  action: "right"
-}
-key_trigger {
   input: KEY_D
   action: "d"
 }
 key_trigger {
   input: KEY_A
   action: "a"
+}
+key_trigger {
+  input: KEY_UP
+  action: "up"
+}
+key_trigger {
+  input: KEY_DOWN
+  action: "down"
 }
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
