@@ -5,7 +5,7 @@ function init(self)
 end
 
 function update(self, dt)
-	print(variable.sAngle)
+	--print(variable.sAngle)
 	if variable.bAngle > 0 and self.status == false then -- checks if sail is on different side
 		go.set_rotation(go.get_rotation() * vmath.quat_rotation_z(math.rad(180))) -- rotates 180 degrees
 		go.set("/flipboom", "scale", vmath.vector3(1, -1, 1)) -- flips so that controls arent inverted

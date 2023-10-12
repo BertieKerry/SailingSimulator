@@ -27,6 +27,15 @@ function update(self, dt)
     local position = go.get_position() -- get the current boat position
     go.set_position(position + movement) -- add movement
     self.velo = v1 -- save the new velocity
+    -- 
+    -- print("-------")
+    -- print("direction",self.direction)
+    -- print("velo",self.velo)
+    -- print("accelCoef",self.accelCoef)
+    -- print("dragCoef",self.dragCoef)
+    -- print("efficiecncy",variable.effic)
+    -- print("leeway",self.leeway)
+    -- print("MOVEMENT",movement)
 end
 
 --
