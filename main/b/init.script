@@ -1,0 +1,14 @@
+local variable = require("main.modules.boat.variable") -- import variables
+local funct = require("main/modules/funct") -- import useful functions
+
+function init(self)
+	local id = funct.trueID(go.get_id())
+	variable.modifysAngle(id, 90)
+	variable.modifybAngle(id, 0)
+	variable.modifyeffic(id, 0)
+	variable.modifyprefSail(id, 0)
+	variable.modifyswitch(id, false)
+	
+	local next = vmath.vector3(2722, 2345, 0)
+	variable.modifynext(id, next)
+end

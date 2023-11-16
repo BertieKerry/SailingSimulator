@@ -1,0 +1,9 @@
+local boat = require("main.modules.boat.boatPhys")
+
+function init(self)
+	boat.init(self)
+end
+
+function update(self, dt)
+	boat.update(self, dt)
+end

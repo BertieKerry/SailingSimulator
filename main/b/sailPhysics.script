@@ -1,0 +1,9 @@
+local sailPhys = require("main/modules/boat/sailPhys")
+
+function init(self)
+	sailPhys.init(self)
+end
+
+function update(self, dt)
+	sailPhys.update(self, dt)
+end

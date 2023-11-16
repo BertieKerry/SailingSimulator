@@ -1,0 +1,46 @@
+local variable = require("main.modules.boat.variable") -- import variables
+local funct = require("main/modules/funct") -- import useful functions
+local os = require("os")
+function init(self)
+	self.variance = 20 -- 10.
+	math.randomseed(os.time())
+	self.variance = self.variance - math.random(0,19)
+	self.twitchiness = 5 --3
+	self.twitchiness = self.twitchiness - math.random(0,4)
+	self.endurance = 40 --100
+	self.endurance = self.endurance - math.random(0,39)
+	self.side = true
+	self.count = 0
+	
+	self.id = funct.trueID(go.get_id())
+end
+
+function update(self, dt)
+	
+	local cp = go.get_position(".")
+	local t = vmath.vector3(2722, 2345, 0) -- variable.next[self.id]
+
+	local targDeg = (math.deg(math.atan2(t.y - cp.y, t.x - cp.x))-90)
+	local boatDeg = variable.bAngle[self.id]
+
+	if -50<targDeg and targDeg<50 then
+		if self.side == false and self.count<self.endurance then
+			targDeg = 47 + self.variance
+		elseif self.side == true and self.count<self.endurance then
+			targDeg =-47 - self.variance
+		else
+			self.side = not self.side
+			self.count = 0
+		end
+	end	
+	
+	if math.abs(boatDeg-targDeg)>self.twitchiness then
+		if boatDeg>targDeg then
+			msg.post(".", "d")
+			-- print("d")
+		elseif boatDeg<targDeg then
+				msg.post(".", "a")
+				-- print("a")
+		end
+	end
+end

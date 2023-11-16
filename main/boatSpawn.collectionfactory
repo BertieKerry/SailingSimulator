@@ -1,0 +1,3 @@
+prototype: "/main/b/boat.collection"
+load_dynamically: false
+dynamic_prototype: false

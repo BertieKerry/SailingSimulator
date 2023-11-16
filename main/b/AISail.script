@@ -1,0 +1,27 @@
+local variable = require("main.modules.boat.variable") -- import variables
+local funct = require("main/modules/funct") -- import useful functions
+
+function init(self)
+	self.variance = 10 -- 10.
+
+	self.id = funct.trueID(go.get_id())
+end
+
+function update(self, dt)
+	local sailDeg = variable.sAngle[self.id]
+	local prefSail = variable.prefSail[self.id]
+
+	if (prefSail - self.variance) > 0 then
+		sailGoal = prefSail - self.variance
+	else
+		sailGoal = prefSail + self.variance
+	end
+
+	if math.abs(sailDeg-sailGoal)>3 then
+		if sailDeg>sailGoal then
+			msg.post(".", "down")
+		elseif sailDeg<sailGoal then
+			msg.post(".", "up")
+		end
+	end
+end

@@ -2,8 +2,13 @@ function init(self)
 	msg.post("cam#camera", "acquire_camera_focus") -- get camera's attention
 end
 
+function on_message(self, message_id, message, sender)
+	--print("message recieved", message_id)
+	self.id = sender
+end
+
 function update(self, dt)
-	boatposition = go.get_position("boat") -- get boat's position
+	boatposition = go.get_position(self.id) -- get boat's position
 	go.set_position(boatposition) -- move camera over boat
 end
 

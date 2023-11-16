@@ -1,0 +1,14 @@
+local sail = require("main.modules.boat.sailCont")
+
+function init(self)
+	self.user = true
+	sail.init(self)
+end
+
+function on_input(self, action_id, action)
+	sail.on_input(self, action_id, action)
+end
+
+function update(self, dt)
+	sail.update(self, dt)
+end

@@ -1,0 +1,11 @@
+local boat = require("main.modules.boat.boatCont")
+
+function init(self)
+	boat.init(self)
+end
+
+function on_message(self, message_id, message, sender)
+	local action_id = message_id
+	local action = nil
+	boat.on_input(self, action_id, action)
+end
