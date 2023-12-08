@@ -29,6 +29,7 @@ function funct.dump(o) -- DELETE LATER --DELETE LATER PLEASE --NOT MY WORK
 		return tostring(o)
 	end
 end
+
 return funct
 
 --

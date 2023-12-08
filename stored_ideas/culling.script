@@ -1,0 +1,78 @@
+function init(self)
+	self.left = false --11==false --12==true
+	self.prev = 0
+	self.switch = false
+	self.count = 0
+	self.prevLoc = go.get_position("main:/collection0/boat")
+	self.tileSize = 48
+end
+---OK OK OK OK OK FLIP BETWEEN FLOOR AND CIELING. THAT bit.
+function update(self, dt)
+	if self.count == 30 then
+		self.loc = go.get_position("main:/collection0/boat")
+		if self.switch == true then
+			x = math.floor(self.loc.x/self.tileSize)*self.tileSize
+			y = math.floor(self.loc.y/self.tileSize)*self.tileSize
+		else
+			x = math.ceil(self.loc.x/self.tileSize)*self.tileSize
+			y = math.ceil(self.loc.y/self.tileSize)*self.tileSize
+		end
+		self.switch = not self.switch
+		
+		go.set_position(vmath.vector3(x, y, 0),"/tiles")
+		self.count = 0
+	end
+	self.count = self.count + 1
+	
+	-- self.loc = go.get_position("main:/collection0/boat")
+	-- -- print(self.prevLoc.x-self.loc.x)
+	-- local changeX = (self.loc.x-self.prevLoc.x)
+	-- local changeY = (self.loc.y-self.prevLoc.y)
+	-- if math.abs(changeX) > 100 or math.abs(changeY) > 100 then
+	-- 	local tileLoc = go.get_position("/tiles")
+	-- 	print(changeX,"hello",math.floor(changeX/64))
+	-- 	if self.switch == true then
+	-- 		changeX = math.ceil(changeX/32)*32
+	-- 		changeY = math.ceil(changeY/32)*32
+	-- 		print("hello tom")
+	-- 	else
+	-- 		changeX = math.ceil(changeX/32)*32
+	-- 		achangeY = math.ceil(changeY/32)*32
+	-- 		print("goodbye tom")
+	-- 	end
+	-- 	print(changeX, changeY)
+	-- 	go.set_position(tileLoc + vmath.vector3(changeX, changeY, 0),"/tiles")
+	-- 	self.prevLoc = go.get_position("main:/collection0/boat")
+	-- 	self.switch = not self.switch
+	-- end
+	
+	-- loc = go.get_position("main:/collection0/boat")
+	-- print(math.floor(loc.x/2048),(loc.x%2048))
+	-- if (loc.x%2048) > 1400 then --650
+	-- 	if math.floor(loc.x/2048)~=self.prev then
+	-- 		self.prev = math.floor(loc.x/2048)
+	-- 		if self.left == false then
+	-- 			go.set_position(vmath.vector3(((math.floor(loc.x/2048)+1)*2048),0,0),"/water11")
+	-- 		else
+	-- 			go.set_position(vmath.vector3(((math.floor(loc.x/2048)+1)*2048),0,0),"/water21")
+	-- 		end
+	-- 		self.left = not self.left
+	-- 	end
+	-- elseif (loc.x%2048) < 650 then
+	-- 	if math.floor(loc.x/2048)==self.prev then
+	-- 		self.prev = math.floor(loc.x/2048)
+	-- 		if self.left == true then
+	-- 			go.set_position(vmath.vector3(((math.floor(loc.x/2048))*2048),0,0),"/water11")
+	-- 		else
+	-- 			go.set_position(vmath.vector3(((math.floor(loc.x/2048))*2048),0,0),"/water21")
+	-- 		end
+	-- 		self.left = not self.left
+	-- 	end
+	-- end
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+end

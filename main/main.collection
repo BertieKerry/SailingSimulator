@@ -1,11 +1,10 @@
 name: "main"
 instances {
-  id: "stay"
-  prototype: "/main/sea/stay.go"
-  children: "go1"
+  id: "water"
+  prototype: "/main/sea/water.go"
   position {
-    x: 0.0
-    y: 0.0
+    x: -768.0
+    y: -768.0
     z: 0.0
   }
   rotation {
@@ -15,8 +14,8 @@ instances {
     w: 1.0
   }
   scale3 {
-    x: 2.0
-    y: 2.0
+    x: 1.0
+    y: 1.0
     z: 1.0
   }
 }
@@ -43,8 +42,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
-    y: 0.0
+    x: 2086.0
+    y: 1427.0
     z: 0.0
   }
   rotation {
@@ -103,7 +102,7 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "go"
+  id: "boats"
   data: "components {\n"
   "  id: \"boatSpawn\"\n"
   "  component: \"/main/boatSpawn.collectionfactory\"\n"
@@ -174,19 +173,15 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "go1"
-  data: "embedded_components {\n"
-  "  id: \"sprite\"\n"
-  "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/main/sea/buoys.atlas\\\"\\n"
-  "default_animation: \\\"one\\\"\\n"
-  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
-  "blend_mode: BLEND_MODE_ALPHA\\n"
-  "\"\n"
+  id: "bg"
+  children: "tiles"
+  data: "components {\n"
+  "  id: \"culling\"\n"
+  "  component: \"/main/sea/culling.script\"\n"
   "  position {\n"
-  "    x: 1361.0\n"
-  "    y: 1172.5\n"
-  "    z: 0.5\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
   "    x: 0.0\n"
@@ -194,10 +189,7 @@ embedded_instances {
   "    z: 0.0\n"
   "    w: 1.0\n"
   "  }\n"
-  "  scale {\n"
-  "    x: 0.25\n"
-  "    y: 0.25\n"
-  "    z: 1.0\n"
+  "  property_decls {\n"
   "  }\n"
   "}\n"
   ""
@@ -215,6 +207,72 @@ embedded_instances {
   scale3 {
     x: 1.0
     y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "buoyTEST"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/main/sea/buoys.atlas\\\"\\n"
+  "default_animation: \\\"one\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  scale {\n"
+  "    x: 0.25\n"
+  "    y: 0.25\n"
+  "    z: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 2722.0
+    y: 1187.0
+    z: 0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "tiles"
+  children: "water"
+  data: ""
+  position {
+    x: 2688.0
+    y: 1008.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
     z: 1.0
   }
 }

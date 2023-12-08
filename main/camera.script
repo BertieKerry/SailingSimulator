@@ -1,5 +1,6 @@
 function init(self)
 	msg.post("cam#camera", "acquire_camera_focus") -- get camera's attention
+	-- msg.post("@render:", "use_camera_projection")
 end
 
 function on_message(self, message_id, message, sender)
