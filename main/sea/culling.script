@@ -1,12 +1,12 @@
 function init(self)
 	self.switch = false
 	self.count = 0
-	self.tileSize = 48
+	self.tileSize = 32 --48
 end
 
 function update(self, dt)
 	if self.count == 30 then
-		self.loc = go.get_position("main:/collection0/boat")
+		self.loc = go.get_position(self.id)
 		if self.switch == true then
 			x = math.floor(self.loc.x/self.tileSize)*self.tileSize
 			y = math.floor(self.loc.y/self.tileSize)*self.tileSize
@@ -15,8 +15,12 @@ function update(self, dt)
 			y = math.ceil(self.loc.y/self.tileSize)*self.tileSize
 		end
 		self.switch = not self.switch
-		go.set_position(vmath.vector3(x, y, 0),"/tiles")
+		go.set_position(vmath.vector3(x, y, 0),"tiles")
 		self.count = 0
 	end
 	self.count = self.count + 1
+end
+
+function on_message(self, message_id, message, sender)
+	self.id = sender
 end

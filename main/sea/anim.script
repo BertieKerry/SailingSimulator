@@ -1,12 +1,46 @@
-local dtile = require "dtile.dtile"
+--local dtile = require "dtile.dtile"
 
-local h_str = {
-	acquire_input_focus = hash("acquire_input_focus"),
-	click = hash("click"),
-	click_debug = hash("click_debug"),
-	layer1 = hash("layer1")
-}
+-- local h_str = {
+-- 	acquire_input_focus = hash("acquire_input_focus"),
+-- 	click = hash("click"),
+-- 	click_debug = hash("click_debug"),
+-- 	layer1 = hash("layer1")
+-- }
+-- 
+-- function init(self)
+-- 	dtile.init(require "main.sea.animation_groups", msg.url("#tilemap"), { h_str.layer1 })
+-- 	-- tile_source
+-- end
+
 
 function init(self)
-	dtile.init(require "main.sea.animation_groups", msg.url("#tilemap"), { h_str.layer1 })
+	self.count = 1
 end
+
+function update(self, dt)
+	-- for i = 1,10 do 
+	-- -- 	
+	-- tilemap.set_visible("#tilemap", "layer1", false)
+	-- tilemap.set_visible("#tilemap", "layer2", true)
+	-- tilemap.set_visible("#tilemap", "layer2", false)
+	-- tilemap.set_visible("#tilemap", "layer3", true)
+	-- tilemap.set_visible("#tilemap", "layer3", false)
+	-- tilemap.set_visible("#tilemap", "layer4", true)
+	-- tilemap.set_visible("#tilemap", "layer4", false)
+	-- tilemap.set_visible("#tilemap", "layer5", true)
+	-- tilemap.set_visible("#tilemap", "layer5", false)
+	-- tilemap.set_visible("#tilemap", "layer6", true)
+end
+
+function fixed_update(self, dt)
+	if self.count == 10 then
+		tilemap.set_visible("#tilemap", "layer"..(1), true)
+		tilemap.set_visible("#tilemap", "layer"..self.count, false)
+		self.count = 1
+	else	
+		tilemap.set_visible("#tilemap", "layer"..(self.count+1), true)
+		tilemap.set_visible("#tilemap", "layer"..self.count, false)
+	end
+	self.count = self.count + 1
+end
+

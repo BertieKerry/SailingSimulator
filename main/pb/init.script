@@ -4,6 +4,7 @@ local funct = require("main/modules/funct") -- import useful functions
 function init(self)
 	local id = funct.trueID(go.get_id())
 	msg.post("/camera", id)
+	msg.post("/bg", id)
 	variable.modifysAngle(id, 90)
 	variable.modifybAngle(id, 0)
 	variable.modifyeffic(id, 0)

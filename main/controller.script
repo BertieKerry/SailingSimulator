@@ -1,14 +1,8 @@
-local os = require("os")
-
 function init(self)
-	math.randomseed(os.time())
-	local count = 2500
-	spacing = 200
-	collectionfactory.create("#pboatSpawn",vmath.vector3(2688,1024,0))
-	for i = 1, 10 do
-		count = count + spacing
-		collectionfactory.create("#boatSpawn",vmath.vector3(count,1000,0))
-	end
+	msg.post(".", "acquire_input_focus")
+	msg.post("#mainMenu", "load")
+	print("hello")
+	msg.post("#mainMenu", "init")
 end
 
 function final(self)
@@ -20,19 +14,17 @@ end
 function update(self, dt)
 end
 
-function fixed_update(self, dt)
-	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
-	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
-	-- Physics section of game.project
-	-- Add update code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
-	-- Remove this function if not needed
+	if message_id == hash("game") then
+		msg.post("#game", "load")
+		-- collectionfactory.create("#game1")
+		msg.post("#mainMenu", "unload")
+	elseif message_id == hash("proxy_loaded") then
+		msg.post(sender, "enable")
+		print("HEllo there my name is proxy")
+	elseif message_id == hash("proxy_unloaded") then
+		print("proxy_unloaded", sender)
+	end
 end
 
 function on_input(self, action_id, action)

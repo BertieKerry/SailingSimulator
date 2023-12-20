@@ -6,8 +6,8 @@ local funct = require("main/modules/funct") -- import useful functions
 function M.init(self)
 	self.velo = vmath.vector3() -- declare velocity vector3
 
-	self.accelCoef = 200 -- 200
-	self.dragCoef = 0.5 -- 0.5
+	self.accelCoef = 100 -- 200
+	self.dragCoef = 0.25 -- 0.5
 	self.leeway = 0.1 -- 0.1
 
 	self.id = funct.trueID(go.get_id())
