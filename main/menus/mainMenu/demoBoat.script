@@ -1,8 +1,6 @@
 function init(self)
-	msg.post(".", "acquire_input_focus")
-	msg.post("#mainMenu", "load")
-	msg.post("#mainMenu", "init")
-	self.current = "#mainMenu"
+	collectionfactory.create("#boatSpawn",vmath.vector3(850,350,0))
+	msg.post("collection0/boat", "target",{vmath.vector3(750, 350, 0)})
 end
 
 function final(self)
@@ -12,27 +10,24 @@ function final(self)
 end
 
 function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function fixed_update(self, dt)
+	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
+	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
+	-- Physics section of game.project
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("game") then
-		msg.post("#game", "load")
-		msg.post("#mainMenu", "unload")
-		self.current = "#game"
-	elseif message_id == hash("guide") then
-		msg.post("#guideMenu", "load")
-		msg.post("#mainMenu", "unload")
-		self.current = "#guideMenu"
-	elseif message_id == hash("mainMenu") then
-		msg.post("#mainMenu", "load")
-		msg.post(self.current, "unload")
-		self.current = "#mainMenu"
-	elseif message_id == hash("proxy_loaded") then
-		msg.post(sender, "enable")
-		print("HEllo there my name is proxy")
-	elseif message_id == hash("proxy_unloaded") then
-		print("proxy_unloaded", sender)
-	end
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
 end
 
 function on_input(self, action_id, action)

@@ -13,14 +13,15 @@ function init(self)
 	self.count = 0
 	
 	self.id = funct.trueID(go.get_id())
+	self.t = vmath.vector3(2722, 2345, 0) -- variable.next[self.id]
 end
 
 function update(self, dt)
 	
 	local cp = go.get_position(".")
-	local t = vmath.vector3(2722, 2345, 0) -- variable.next[self.id]
+	-- local t = vmath.vector3(2722, 2345, 0) -- variable.next[self.id]
 
-	local targDeg = (math.deg(math.atan2(t.y - cp.y, t.x - cp.x))-90)
+	local targDeg = (math.deg(math.atan2(self.t.y - cp.y, self.t.x - cp.x))-90)
 	local boatDeg = variable.bAngle[self.id]
 
 	if -50<targDeg and targDeg<50 then
@@ -42,5 +43,11 @@ function update(self, dt)
 				msg.post(".", "a")
 				-- print("a")
 		end
+	end
+end
+
+function on_message(self, message_id, message)
+	if message_id == hash("target") then
+		self.t = message[1]
 	end
 end

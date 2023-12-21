@@ -73,7 +73,7 @@ embedded_instances {
   "}\n"
   "components {\n"
   "  id: \"water splash\"\n"
-  "  component: \"/main/gui/water splash.particlefx\"\n"
+  "  component: \"/main/sea/water splash.particlefx\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: -144.0\n"

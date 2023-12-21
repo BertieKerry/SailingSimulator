@@ -1,4 +1,4 @@
-script: "/main/gui/main.gui_script"
+script: "/main/menus/mainMenu/main.gui_script"
 fonts {
   name: "Title"
   font: "/main/gui/Title.font"
@@ -111,7 +111,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/main/gui/buttton.gui"
+  template: "/main/gui/button.gui"
   template_node_child: false
   custom_type: 0
   enabled: true
@@ -457,7 +457,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/main/gui/buttton.gui"
+  template: "/main/gui/button.gui"
   template_node_child: false
   custom_type: 0
   enabled: true
@@ -802,7 +802,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/main/gui/buttton.gui"
+  template: "/main/gui/button.gui"
   template_node_child: false
   custom_type: 0
   enabled: true
@@ -1147,7 +1147,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/main/gui/buttton.gui"
+  template: "/main/gui/button.gui"
   template_node_child: false
   custom_type: 0
   enabled: true
