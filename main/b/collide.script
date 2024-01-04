@@ -1,0 +1,24 @@
+local variable = require("main.modules.boat.variable") -- import variables
+local funct = require("main/modules/funct") -- import useful functions
+
+function init(self)
+	self.id = funct.trueID(go.get_id())
+	self.once = false
+end
+
+function update(self, dt)
+	if self.once == false then
+		variable.modifynext(self.id,variable.course[1])
+		self.once = true
+		msg.post(".", "newTarget")
+	end
+end
+
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("collision_response") then
+		if message.other_id == hash("/instance"..tostring(variable.next)) then
+			
+		end
+	end
+end

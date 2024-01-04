@@ -12,3 +12,11 @@ function init(self)
 	local next = vmath.vector3(2722, 2345, 0)
 	variable.modifynext(id, next)
 end
+-- 
+-- function on_message(self, message_id, message, sender)
+-- 	--print(message_id)
+-- 	if message_id == hash("courseOrder") then
+-- 		variable.modifyCourse(id, message)
+-- 		print("all good", message[2])
+-- 	end
+-- end

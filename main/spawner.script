@@ -1,14 +1,13 @@
 local os = require("os")
 
 function init(self)
-	math.randomseed(os.time())
-	local count = 2500
-	spacing = 200
-	collectionfactory.create("#pboatSpawn",vmath.vector3(2688,1024,0))
-	for i = 1, 10 do
-		count = count + spacing
-		collectionfactory.create("#boatSpawn",vmath.vector3(count,1000,0))
+	math.randomseed(os.time()) -- (2688,1024,0))
+	spacing = 100
+	for i = 2, 9 do
+		count = i*spacing
+		collectionfactory.create("#boatSpawn",vmath.vector3(count,0,0))
 	end
+	collectionfactory.create("#pboatSpawn",vmath.vector3(100,0,0))
 end
 
 function final(self)

@@ -1,0 +1,26 @@
+local courses = require("main/modules/courses")
+local variable = require("main.modules.boat.variable")
+
+function init(self)
+	msg.post(".", "courseNo", {1})
+end
+
+function on_message(self, message_id, message, sender)
+	print(message_id)
+	if message_id == hash("courseNo") then
+		local course = courses.courses[message[1]]
+		local length = course[1]
+		local start = course[2]
+		factory.create("/course#start",start)
+		for i = 3,2+length do
+			local mark = course[i]
+			factory.create("/course#mark",mark)
+			local id = "/instance"..tostring(i-2).."#buoy"
+			sprite.play_flipbook(id, tostring(i-2))
+		end
+		local finish = course[#course]
+		factory.create("/course#finish",finish)
+		variable.modifycourse({unpack(course, 3, #course)})
+		print("2", variable.course[1])
+	end
+end

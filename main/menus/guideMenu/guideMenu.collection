@@ -61,7 +61,7 @@ embedded_instances {
   id: "demoBoat"
   data: "components {\n"
   "  id: \"boatSpawn\"\n"
-  "  component: \"/main/boatSpawn.collectionfactory\"\n"
+  "  component: \"/main/b/boatSpawn.collectionfactory\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

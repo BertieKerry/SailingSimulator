@@ -6,7 +6,7 @@ emitters {
   position {
     x: 0.0
     y: 0.0
-    z: 0.2
+    z: 0.0
   }
   rotation {
     x: 0.0
@@ -14,7 +14,7 @@ emitters {
     z: 0.0
     w: 1.0
   }
-  tile_source: "/assets/images/waterPart.tilesource"
+  tile_source: "/assets/images/bg/waterPart.tilesource"
   animation: "anim"
   material: "/builtins/materials/particlefx.material"
   blend_mode: BLEND_MODE_ADD
@@ -279,7 +279,7 @@ emitters {
   position {
     x: 0.0
     y: 0.0
-    z: 0.2
+    z: 0.0
   }
   rotation {
     x: 0.0
@@ -293,7 +293,7 @@ emitters {
   blend_mode: BLEND_MODE_ADD
   particle_orientation: PARTICLE_ORIENTATION_DEFAULT
   inherit_velocity: 0.0
-  max_particle_count: 100000
+  max_particle_count: 1000
   type: EMITTER_TYPE_BOX
   start_delay: 0.0
   properties {

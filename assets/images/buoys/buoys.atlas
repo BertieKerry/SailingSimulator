@@ -1,5 +1,5 @@
 images {
-  image: "/assets/images/buoys/eight.png"
+  image: "/assets/images/buoys/8.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
@@ -7,15 +7,15 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/buoys/four.png"
+  image: "/assets/images/buoys/4.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/buoys/nine.png"
+  image: "/assets/images/buoys/9.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/buoys/one.png"
+  image: "/assets/images/buoys/1.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
@@ -23,19 +23,23 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/buoys/seven.png"
+  image: "/assets/images/buoys/7.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/buoys/six.png"
+  image: "/assets/images/buoys/6.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/buoys/three.png"
+  image: "/assets/images/buoys/3.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/buoys/two.png"
+  image: "/assets/images/buoys/2.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/buoys/commit.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0

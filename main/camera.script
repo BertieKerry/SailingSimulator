@@ -19,8 +19,7 @@ function on_input(self, action_id, action)
 	if action_id == hash("space") then
 		print("space")
 		go.set("/cam#camera", "orthographic_zoom", go.get("/cam#camera", "orthographic_zoom")-0.01)
-	end
-		
+	end	
 end
 
 --

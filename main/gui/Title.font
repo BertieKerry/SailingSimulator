@@ -1,4 +1,4 @@
-font: "/assets/ElementalEnd.ttf"
+font: "/assets/fonts/ElementalEnd.ttf"
 material: "/builtins/fonts/font.material"
 size: 100
 antialias: 1

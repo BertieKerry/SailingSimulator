@@ -13,13 +13,12 @@ function init(self)
 	self.count = 0
 	
 	self.id = funct.trueID(go.get_id())
-	self.t = vmath.vector3(2722, 2345, 0) -- variable.next[self.id]
+	self.t = vmath.vector3(0, 0, 0)
 end
 
 function update(self, dt)
 	
 	local cp = go.get_position(".")
-	-- local t = vmath.vector3(2722, 2345, 0) -- variable.next[self.id]
 
 	local targDeg = (math.deg(math.atan2(self.t.y - cp.y, self.t.x - cp.x))-90)
 	local boatDeg = variable.bAngle[self.id]
@@ -44,10 +43,17 @@ function update(self, dt)
 				-- print("a")
 		end
 	end
+
 end
 
-function on_message(self, message_id, message)
-	if message_id == hash("target") then
-		self.t = message[1]
+function on_message(self, message_id, message, sender)
+	-- if message_id == hash("target") then
+	-- 	print("hell0")
+	-- 	self.t = message[1]
+	-- end
+
+	if message_id == hash("newTarget") then
+		self.t = variable.next[self.id]
+		print("reached")
 	end
 end

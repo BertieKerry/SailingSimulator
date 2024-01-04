@@ -1,0 +1,19 @@
+function init(self)
+	msg.post(".", "acquire_input_focus")
+end
+
+function final(self)
+	msg.post(".", "release_input_focus")
+end
+
+function on_input(self, action_id, action)
+	if action.pressed and gui.pick_node(gui.get_node("back/back"), action.x, action.y) then
+		msg.post("main:/controller","mainMenu")
+	end
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

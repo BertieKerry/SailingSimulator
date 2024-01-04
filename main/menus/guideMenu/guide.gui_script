@@ -1,3 +1,5 @@
+local words = require("main/menus/guideMenu/guideText")
+
 function init(self)
 	msg.post(".", "acquire_input_focus")
 end
@@ -9,6 +11,20 @@ end
 function on_input(self, action_id, action)
 	if action.pressed and gui.pick_node(gui.get_node("back/back"), action.x, action.y) then
 		msg.post("main:/controller","mainMenu")
+	elseif action.pressed and gui.pick_node(gui.get_node("welcome/button"), action.x, action.y) then
+		gui.set_text(gui.get_node("text/text"), words.welcome)
+	elseif action.pressed and gui.pick_node(gui.get_node("steering/button"), action.x, action.y) then
+		gui.set_text(gui.get_node("text/text"), words.steering)
+	elseif action.pressed and gui.pick_node(gui.get_node("sailControl/button"), action.x, action.y) then
+		gui.set_text(gui.get_node("text/text"), words.sailControl)
+	elseif action.pressed and gui.pick_node(gui.get_node("pointsOfSail/button"), action.x, action.y) then
+		gui.set_text(gui.get_node("text/text"), words.pointsOfSail)
+	elseif action.pressed and gui.pick_node(gui.get_node("windDirection/button"), action.x, action.y) then
+		gui.set_text(gui.get_node("text/text"), words.windDirection)
+	elseif action.pressed and gui.pick_node(gui.get_node("racing/button"), action.x, action.y) then
+		gui.set_text(gui.get_node("text/text"), words.racing)
+	elseif action.pressed and gui.pick_node(gui.get_node("menus/button"), action.x, action.y) then
+		gui.set_text(gui.get_node("text/text"), words.menus)
 	end
 end
 

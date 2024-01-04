@@ -7,7 +7,9 @@ M.prefSail = {} -- 0
 
 M.switch = {} -- false
 
+M.course = {vmath.vector3(750, 350, 0)}
 M.next = {} -- vmath.vector3(2722, 2345, 0)
+
 
 function M.modifysAngle(id, value)
 	M.sAngle[id] = value
@@ -31,8 +33,12 @@ function M.modifyswitch(id, value)
 	M.switch[id] = value
 end
 
+function M.modifycourse(value)
+	M.course = value
+end
+
 function M.modifynext(id, value)
-	M.next = value
+	M.next[id] = value
 end
 
 return M

@@ -15,10 +15,10 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("game") then
-		msg.post("#game", "load")
+	if message_id == hash("race") then
+		msg.post("#raceMenu", "load")
 		msg.post("#mainMenu", "unload")
-		self.current = "#game"
+		self.current = "#raceMenu"
 	elseif message_id == hash("guide") then
 		msg.post("#guideMenu", "load")
 		msg.post("#mainMenu", "unload")

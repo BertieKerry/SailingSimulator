@@ -1,13 +1,17 @@
 images {
-  image: "/assets/images/gui/button.png"
+  image: "/assets/images/boats/boat2.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/gui/buttonMid.png"
+  image: "/assets/images/boats/cat.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/arrow-back-12-256.png"
+  image: "/assets/images/boats/oppi.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/boats/moth.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0

@@ -1,4 +1,4 @@
-font: "/assets/Tektur-VariableFont_wdth,wght.ttf"
+font: "/assets/fonts/Tektur-VariableFont_wdth,wght.ttf"
 material: "/builtins/fonts/font.material"
 size: 100
 antialias: 1

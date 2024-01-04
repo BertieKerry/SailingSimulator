@@ -3,7 +3,6 @@ local boat = require("main.modules.boat.boatCont")
 function init(self)
 	self.user = true
 	boat.init(self)
-	particlefx.play("#water splash")
 end
 
 function on_input(self, action_id, action)
