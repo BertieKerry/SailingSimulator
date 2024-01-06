@@ -1,4 +1,4 @@
-**[Click here to play! (PC only)](bertiekerry.github.io)**
+**[Click here to play! (PC only)](https://bertiekerry.github.io)**
 
 
 # DONE - Current Objectives #
