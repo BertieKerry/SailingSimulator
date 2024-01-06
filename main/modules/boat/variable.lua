@@ -10,6 +10,11 @@ M.switch = {} -- false
 M.course = {vmath.vector3(750, 350, 0)}
 M.next = {} -- vmath.vector3(2722, 2345, 0)
 
+M.leaderboard = {}
+
+M.id = nil
+
+M.velo = {}
 
 function M.modifysAngle(id, value)
 	M.sAngle[id] = value
@@ -39,6 +44,20 @@ end
 
 function M.modifynext(id, value)
 	M.next[id] = value
+end
+
+
+function M.leaderboardappend(value)
+	table.insert(M.leaderboard, value)
+end
+
+function M.modifyid(value)
+	M.id = value
+end
+
+function M.modifyvelo(id, value)
+	M.velo[id] = value
+	--print(id,value)
 end
 
 return M

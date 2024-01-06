@@ -27,6 +27,10 @@ function on_message(self, message_id, message, sender)
 		msg.post("#mainMenu", "load")
 		msg.post(self.current, "unload")
 		self.current = "#mainMenu"
+	elseif message_id == hash("game") then
+		msg.post("#game", "load")
+		msg.post(self.current, "unload")
+		self.current = "#game"	
 	elseif message_id == hash("proxy_loaded") then
 		msg.post(sender, "enable")
 		print("HEllo there my name is proxy")

@@ -2,12 +2,15 @@ local M = {}
 
 local variable = require("main.modules.boat.variable") -- import variables
 local funct = require("main/modules/funct") -- import useful functions
+local options = require("main.modules.options")
+local boats = require("main.modules.boats")
 
 function M.init(self)
 	self.velo = vmath.vector3() -- declare velocity vector3
-
-	self.accelCoef = 100 -- 200
-	self.dragCoef = 0.25 -- 0.5
+	
+	local boat = boats.boat[options.boatType]
+	self.accelCoef = boat[3]--100 -- 200
+	self.dragCoef = boat[4] --0.25 -- 0.5
 	self.leeway = 0.1 -- 0.1
 
 	self.id = funct.trueID(go.get_id())
@@ -31,7 +34,7 @@ function M.update(self, dt, thing)
 	local position = go.get_position() -- get the current boat position
 	go.set_position(position + movement) -- add movement
 	self.velo = v1 -- save the new velocity
-	--print(self.velo)
+	variable.modifyvelo(self.id, self.velo)
 end
 
 return M

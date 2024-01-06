@@ -1,5 +1,5 @@
 images {
-  image: "/assets/images/boats/boat2.png"
+  image: "/assets/images/boats/laser.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {

@@ -1,0 +1,57 @@
+local variable = require("main.modules.boat.variable") -- import variables
+local options = require("main.modules.options") --  import options
+function init(self)
+	self.id = variable.id
+
+	self.speed = gui.get_node("boatSpeed")
+	self.wind = gui.get_node("windSpeed")
+	self.effic = gui.get_node("efficiency")
+	self.sail = gui.get_node("sailAngle")
+	self.next = gui.get_node("nextMark")
+	msg.post(".", "acquire_input_focus")
+end
+
+function final(self)
+	msg.post(".", "release_input_focus")
+end
+
+function update(self, dt)
+	local velo = variable.velo[self.id]
+	
+	gui.set_text(self.speed, math.floor(math.sqrt(velo.x^2+velo.y^2))/10)
+	gui.set_text(self.wind, 20)
+	gui.set_text(self.effic, math.floor(variable.effic[self.id]*100)/100)
+	gui.set_text(self.effic, math.floor(variable.sAngle[self.id]*100)/100)
+	gui.set_text(self.next, string.sub(tostring(variable.next[self.id]),14,-1))
+end
+
+function on_message(self, message_id, message, sender)
+	print(message_id)
+	if message_id == hash("finished") then
+		print("helo")
+		local leaderboard = gui.get_node("text")
+		local background = gui.get_node("leaderboard")
+		local data = variable.leaderboard
+		local text = "leaderboard \n"
+		for i = 1,#data do
+			text = text .. tostring(i)..". "..data[i].."\n"
+		end
+		gui.set_text(leaderboard, text)
+		gui.set_enabled(background, true)
+
+		gui.set_enabled(gui.get_node("template/back"), true)
+		
+	end
+end
+
+function on_input(self, action_id, action)
+	if action.pressed and gui.pick_node(gui.get_node("template/back"), action.x, action.y) then
+		msg.post("main:/controller","mainMenu")
+	end
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

@@ -1,5 +1,7 @@
 local variable = require("main.modules.boat.variable") -- import variables
 local funct = require("main/modules/funct") -- import useful functions
+local options = require("main.modules.options")
+local boats = require("main.modules.boats")
 
 function init(self)
 	local id = funct.trueID(go.get_id())
@@ -8,15 +10,8 @@ function init(self)
 	variable.modifyeffic(id, 0)
 	variable.modifyprefSail(id, 0)
 	variable.modifyswitch(id, false)
-	
-	local next = vmath.vector3(2722, 2345, 0)
-	variable.modifynext(id, next)
+
+	local boat = boats.boat[options.boatType]
+	sprite.play_flipbook("#boat", boat[1])
+	go.set_scale(vmath.vector3(boat[2], boat[2], 1),"flipboom")
 end
--- 
--- function on_message(self, message_id, message, sender)
--- 	--print(message_id)
--- 	if message_id == hash("courseOrder") then
--- 		variable.modifyCourse(id, message)
--- 		print("all good", message[2])
--- 	end
--- end

@@ -2,13 +2,15 @@ local M = {}
 
 local variable = require("main.modules.boat.variable") -- import variables
 local funct = require("main/modules/funct") -- import useful functions
-
+local options = require("main.modules.options")
+local boats = require("main.modules.boats")
 
 function M.init(self)
+	self.turnRate = boats.boat[options.boatType][5] -- 0.4
 	if self.user == true then
 		msg.post(".", "acquire_input_focus")
+		self.turnRate = self.turnRate + 0.15
 	end
-	self.turnRate = 0.4 -- 0.4
 
 	self.id = funct.trueID(go.get_id())
 end

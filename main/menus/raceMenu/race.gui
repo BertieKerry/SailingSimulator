@@ -3,6 +3,10 @@ fonts {
   name: "Title"
   font: "/main/gui/Title.font"
 }
+textures {
+  name: "buoys"
+  texture: "/assets/images/buoys/buoys.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -518,8 +522,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.7
-    y: 0.7
+    x: 0.35
+    y: 0.35
     z: 1.0
     w: 1.0
   }
@@ -563,7 +567,6 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  overridden_fields: 3
   overridden_fields: 8
   template_node_child: true
   text_leading: 1.0
@@ -999,7 +1002,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "bot/boat2"
+  texture: "bot/laser"
   id: "laser/boat"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -2598,8 +2601,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.1
-    y: 0.1
+    x: 0.25
+    y: 0.25
     z: 1.0
     w: 1.0
   }
@@ -2617,7 +2620,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "bot/cat"
+  texture: "buoys/1"
   id: "1/boat"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -2636,6 +2639,8 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 3
+  overridden_fields: 9
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
   custom_type: 0
@@ -2676,7 +2681,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Catamaran"
+  text: "Course 1"
   font: "Title"
   id: "1/text"
   xanchor: XANCHOR_NONE
@@ -2702,6 +2707,7 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 8
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
@@ -3001,8 +3007,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.1
-    y: 0.1
+    x: 0.25
+    y: 0.25
     z: 1.0
     w: 1.0
   }
@@ -3020,7 +3026,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "bot/cat"
+  texture: "buoys/2"
   id: "2/boat"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -3039,6 +3045,8 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 3
+  overridden_fields: 9
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
   custom_type: 0
@@ -3079,7 +3087,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Catamaran"
+  text: "Course 2"
   font: "Title"
   id: "2/text"
   xanchor: XANCHOR_NONE
@@ -3105,6 +3113,7 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 8
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
@@ -3404,8 +3413,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.1
-    y: 0.1
+    x: 0.25
+    y: 0.25
     z: 1.0
     w: 1.0
   }
@@ -3423,7 +3432,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "bot/cat"
+  texture: "buoys/3"
   id: "3/boat"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -3442,6 +3451,8 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 3
+  overridden_fields: 9
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
   custom_type: 0
@@ -3482,7 +3493,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Catamaran"
+  text: "Course 3"
   font: "Title"
   id: "3/text"
   xanchor: XANCHOR_NONE
@@ -3508,6 +3519,7 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 8
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
@@ -3807,8 +3819,8 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.1
-    y: 0.1
+    x: 0.25
+    y: 0.25
     z: 1.0
     w: 1.0
   }
@@ -3826,7 +3838,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "bot/cat"
+  texture: "buoys/4"
   id: "4/boat"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -3845,6 +3857,8 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 3
+  overridden_fields: 9
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
   custom_type: 0
@@ -3885,7 +3899,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Catamaran"
+  text: "Course 4"
   font: "Title"
   id: "4/text"
   xanchor: XANCHOR_NONE
@@ -3911,6 +3925,7 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 8
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0

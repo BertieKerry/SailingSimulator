@@ -109,7 +109,7 @@ embedded_instances {
   "  id: \"boat\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/bot.atlas\\\"\\n"
-  "default_animation: \\\"boat2\\\"\\n"
+  "default_animation: \\\"laser\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -297,8 +297,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 1.0
-    y: 1.0
+    x: 0.25
+    y: 0.25
     z: 1.0
   }
 }
@@ -322,11 +322,6 @@ embedded_instances {
   "    y: 0.0\n"
   "    z: 0.0\n"
   "    w: 1.0\n"
-  "  }\n"
-  "  scale {\n"
-  "    x: 0.25\n"
-  "    y: 0.25\n"
-  "    z: 1.0\n"
   "  }\n"
   "}\n"
   ""

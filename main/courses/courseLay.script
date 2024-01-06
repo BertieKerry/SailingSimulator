@@ -1,12 +1,11 @@
 local courses = require("main/modules/courses")
 local variable = require("main.modules.boat.variable")
-
+local options = require("main.modules.options")
 function init(self)
-	msg.post(".", "courseNo", {1})
+	msg.post(".", "courseNo", {options.course})
 end
 
 function on_message(self, message_id, message, sender)
-	print(message_id)
 	if message_id == hash("courseNo") then
 		local course = courses.courses[message[1]]
 		local length = course[1]

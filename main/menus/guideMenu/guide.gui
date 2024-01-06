@@ -2834,12 +2834,11 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Welcome to Sailing Simulator, the golden standard of sailing simulations. I hope you enjoy your time using the simulator just as much as I have enjoyed making it. \n"
+  text: "Dinghy sailing is a thrilling water sport that involves maneuvering small, lightweight boats known as dinghies. Typically, these vessels accommodate one to two sailors and rely on the wind for propulsion. Sailors harness the wind\'s power using a sail attached to a mast, steering the dinghy with a tiller connected to a rudder. \n"
   "\n"
-  "The game has taken roughly a year to put together and is made entirely in the Defold game engine using Lua. All the assets you see are made entirely by me (except the water background which is available free online)(and the fonts too), and all the code under the surface is entirely written by me.\n"
+  "Tacking and jibing techniques are employed to navigate the boat against the wind or change direction. Balancing weight and adjusting sail trim are crucial for speed and stability. \n"
   "\n"
-  "Please take some time to read through this guide section and familiarise yourself with the controls. IF you have any issues, please report them on the Github repo. Enjoy!\n"
-  ""
+  "Dinghy sailing demands skill, agility, and a keen understanding of wind dynamics, making it an exhilarating and accessible entry point into the world of sailing."
   font: "body"
   id: "text/text"
   xanchor: XANCHOR_NONE
@@ -2865,8 +2864,6 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
-  overridden_fields: 8
-  overridden_fields: 10
   template_node_child: true
   text_leading: 1.1
   text_tracking: 0.0

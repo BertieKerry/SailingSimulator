@@ -1,7 +1,10 @@
+local variable = require("main.modules.boat.variable") -- import variables
+
 function init(self)
 	msg.post("cam#camera", "acquire_camera_focus") -- get camera's attention
 	msg.post("@render:", "use_camera_projection")
 	msg.post(".", "acquire_input_focus") ---------
+	self.zoom = go.get("/cam#camera", "orthographic_zoom")
 end
 
 function on_message(self, message_id, message, sender)
@@ -16,9 +19,12 @@ end
 
 
 function on_input(self, action_id, action)
-	if action_id == hash("space") then
-		print("space")
-		go.set("/cam#camera", "orthographic_zoom", go.get("/cam#camera", "orthographic_zoom")-0.01)
+	if action_id == hash("space") and self.zoom>0.15 then
+		self.zoom = self.zoom - 0.01
+		go.set("/cam#camera", "orthographic_zoom", self.zoom)
+	elseif action_id == hash("enter") and self.zoom<1 then
+		self.zoom = self.zoom + 0.01
+		go.set("/cam#camera", "orthographic_zoom", self.zoom)
 	end	
 end
 
