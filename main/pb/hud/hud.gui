@@ -630,7 +630,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Efficiency:"
+  text: "eFFiciency:"
   font: "Title"
   id: "efficiency1"
   xanchor: XANCHOR_NONE

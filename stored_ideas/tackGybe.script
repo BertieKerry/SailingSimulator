@@ -1,4 +1,4 @@
-local variable = require("main/modules/variable")
+local variable = require("main/modules/boat/variable")
 
 function init(self)
 	msg.post(".", "acquire_input_focus") --del later

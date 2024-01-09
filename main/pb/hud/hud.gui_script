@@ -21,14 +21,12 @@ function update(self, dt)
 	gui.set_text(self.speed, math.floor(math.sqrt(velo.x^2+velo.y^2))/10)
 	gui.set_text(self.wind, 20)
 	gui.set_text(self.effic, math.floor(variable.effic[self.id]*100)/100)
-	gui.set_text(self.effic, math.floor(variable.sAngle[self.id]*100)/100)
+	gui.set_text(self.sail, math.floor(variable.sAngle[self.id]*100)/100)
 	gui.set_text(self.next, string.sub(tostring(variable.next[self.id]),14,-1))
 end
 
 function on_message(self, message_id, message, sender)
-	print(message_id)
 	if message_id == hash("finished") then
-		print("helo")
 		local leaderboard = gui.get_node("text")
 		local background = gui.get_node("leaderboard")
 		local data = variable.leaderboard

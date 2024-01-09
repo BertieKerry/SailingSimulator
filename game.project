@@ -34,3 +34,9 @@ max_tile_count = 8212
 [engine]
 fixed_update_frequency = 10
 
+[html5]
+show_made_with_defold = 0
+show_console_banner = 0
+splash_image = /assets/images/bg/blue.png
+cssfile = /assets/light_theme.css
+

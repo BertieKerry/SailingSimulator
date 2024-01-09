@@ -19,3 +19,6 @@ function init(self)
 	go.set_scale(vmath.vector3(boat[2], boat[2], 1),"flipboom")
 end
 
+function update(self, dt)
+	print(variable.bAngle[funct.trueID(go.get_id())])
+end

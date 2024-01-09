@@ -1917,7 +1917,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "points of sail"
+  text: "points oF sail"
   font: "Title"
   id: "pointsOfSail/text"
   xanchor: XANCHOR_NONE

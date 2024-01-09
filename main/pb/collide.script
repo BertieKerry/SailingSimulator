@@ -19,7 +19,7 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") then
-		print(message.other_id, hash("/instance"..tostring(self.count-1)))
+		--print(message.other_id, hash("/instance"..tostring(self.count-1)))
 		if message.other_id == hash("/instance"..tostring(self.count-1)) then
 			if self.count-1 == #variable.course and self.finished == false then
 				variable.leaderboardappend(self.id)
