@@ -1,4 +1,4 @@
-**[Click here to play! (PC only)](https://bertiekerry.github.io)**
+**[Click here to play! (PC only)](https://bertiekerry.github.io/ss_release/SailingSimulator/index.html)**
 
 
 # DONE - Current Objectives #
