@@ -1,6 +1,6 @@
 local variable = require("main.modules.boat.variable") -- import variables
 local funct = require("main/modules/funct") -- import useful functions
-local os = require("os")
+
 function init(self)
 	self.variance = 20 -- 10.
 	self.variance = self.variance - variable.ran20[1]
@@ -10,7 +10,7 @@ function init(self)
 
 	--self.twitchiness = self.twitchiness - math.random(0,4)
 	
-	self.endurance = 300 --100
+	self.endurance = 500 --100
 	self.endurance = (self.endurance - 2 * variable.ran40[1])
 	variable.popran40()
 	

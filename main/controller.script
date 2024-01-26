@@ -3,6 +3,20 @@ function init(self)
 	msg.post("#mainMenu", "load")
 	msg.post("#mainMenu", "init")
 	self.current = "#mainMenu"
+-- 
+-- 	local file = io.open("scores.txt", "a")
+-- 	file:write("Some text output...\nMore text output...")
+-- 	file:close()
+-- 
+-- 	local file = io.open("scores.txt", "r")
+-- 	local content = file:read("*a")
+-- 
+-- 	-- Print the content
+-- 	print("hi",content)
+-- 
+-- 	-- Close the file
+-- 	file:close()
+-- 	
 end
 
 function final(self)
@@ -12,6 +26,7 @@ function final(self)
 end
 
 function update(self, dt)
+
 end
 
 function on_message(self, message_id, message, sender)
